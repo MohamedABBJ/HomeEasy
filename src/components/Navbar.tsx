@@ -14,7 +14,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
-const labelHamburger = [
+const labelHamburger: string[] = [
   "Sign up",
   "Log in",
   "Gift cards",
@@ -22,10 +22,12 @@ const labelHamburger = [
   "Help center",
 ]
 
-export default function Navbar() {
-  const [activeTab, setActiveTab] = useState("stays")
+type Tab = "stays" | "experience"
 
-  function handleSetActiveTab(tab) {
+export default function Navbar() {
+  const [activeTab, setActiveTab] = useState<Tab>("stays")
+
+  function handleSetActiveTab(tab: Tab): void {
     setActiveTab(tab)
   }
 
