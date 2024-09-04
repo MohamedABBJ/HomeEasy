@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar"
+import InputNavbar from "@/components/InputNavbar"
 
 import type { Metadata } from "next"
 import { Red_Hat_Text } from "next/font/google"
@@ -20,6 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={redHatText.className}>
         <Navbar />
+        <InputNavbar />
         {children}
       </body>
     </html>

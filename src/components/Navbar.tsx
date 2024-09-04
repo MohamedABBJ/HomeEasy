@@ -32,7 +32,7 @@ export default function Navbar() {
   }
 
   return (
-    <header className="navbarmd:flex items-center justify-between w-full border navbar2xl:px-20 navbarmd:px-10 h-[80px] hidden">
+    <header className="navbarmd:flex items-center justify-between w-full navbar2xl:px-20 navbarmd:px-10 h-[80px] hidden">
       <div className="flex-1">
         <Link href="/">
           <picture>
@@ -102,19 +102,18 @@ export default function Navbar() {
             >
               {labelHamburger.map((el, idx) =>
                 idx === 1 ? (
-                  <>
+                  <div key={idx}>
                     <Link href="/login">
                       <DropdownMenuItem
                         className={`${
                           el === "Sign up" ? "font-medium" : ""
                         } pl-4 cursor-pointer py-3`}
-                        key={idx}
                       >
                         {el}
                       </DropdownMenuItem>
                     </Link>
                     <DropdownMenuSeparator />
-                  </>
+                  </div>
                 ) : (
                   <Link href={el.replace(/\s/g, "").toLowerCase()} key={idx}>
                     <DropdownMenuItem

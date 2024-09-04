@@ -17,6 +17,7 @@ const config: Config = {
       },
       boxShadow: {
         "2lg": "rgba(0, 0, 0, 0.15) 0px 3px 3px 0px",
+        "3xl": "rgba(0, 0, 0, 0.15) 0px 2px 8px",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
