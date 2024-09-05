@@ -32,8 +32,10 @@ const config: Config = {
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        txtprimary: "hsl(0, 0%, 13%)",
-        txtsecondary: "hsl(0, 0%, 42%)",
+        textNavbar: {
+          primary: "hsl(0, 0%, 13%)",
+          secondary: "hsl(0, 0%, 42%)",
+        },
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
@@ -61,6 +63,9 @@ const config: Config = {
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
+        },
+        inputModals: {
+          DEFAULT: "hsl(0,0%,92%)",
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

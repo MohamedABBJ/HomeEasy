@@ -46,9 +46,9 @@ export default function Navbar() {
       <div className="text-center flex-1 hidden navbarlg:block">
         <Button
           variant="ghost"
-          className={`font-light text-base text-txtsecondary ${
+          className={`font-light text-base text-textNavbar-secondary ${
             activeTab === "stays"
-              ? "font-medium hover:bg-transparent text-txtprimary"
+              ? "font-medium hover:bg-transparent text-textNavbar-primary"
               : ""
           }`}
           onClick={() => handleSetActiveTab("stays")}
@@ -58,9 +58,9 @@ export default function Navbar() {
 
         <Button
           variant="ghost"
-          className={`font-light text-base text-txtsecondary ${
+          className={`font-light text-base text-textNavbar-secondary ${
             activeTab === "experience"
-              ? "font-medium hover:bg-transparent text-txtprimary"
+              ? "font-medium hover:bg-transparent text-textNavbar-primary"
               : ""
           }`}
           onClick={() => handleSetActiveTab("experience")}
@@ -72,7 +72,7 @@ export default function Navbar() {
       <nav className="flex-1">
         <ul className="flex items-center justify-end">
           <Link href="/airbnbyourhome">
-            <Button variant="ghost" className="p-3 text-txtprimary">
+            <Button variant="ghost" className="p-3 text-textNavbar-primary">
               Airbnb your home
             </Button>
           </Link>
