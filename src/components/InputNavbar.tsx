@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react"
+import { useState, useRef } from "react"
 
 import {
   DropdownMenu,
@@ -16,10 +16,16 @@ import InputGuest from "./InputGuest"
 
 export default function InputNavbar() {
   const [activeModals, setActiveModals] = useState<string>("")
+  const containerModalRef = useRef(null)
 
   function handleActiveModal(e): void {
     const name = e.target.dataset.name || e.target.parentElement.dataset.name
-    setActiveModals((sm) => (sm = name))
+
+    if (!name && containerModalRef.current.contains(e.target)) {
+      setActiveModals((sm) => (sm = sm))
+    } else {
+      setActiveModals((sm) => (sm = name))
+    }
   }
 
   return (
@@ -27,9 +33,10 @@ export default function InputNavbar() {
       <div
         className="rounded-full shadow-3xl flex py-3.5"
         onClick={(e) => handleActiveModal(e)}
+        ref={containerModalRef}
       >
         <div
-          className="px-8 border-r cursor-pointer relative"
+          className="px-8 border-r cursor-pointer relative min-w-[284px]"
           data-name="destination"
         >
           <p className="text-xs font-medium text-textNavbar-primary "> Where</p>
@@ -46,7 +53,6 @@ export default function InputNavbar() {
           data-name="checkin"
         >
           <p className="text-xs font-medium text-textNavbar-primary">
-            {" "}
             Check in
           </p>
           <p className="text-sm text-textNavbar-secondary"> Add dates</p>
@@ -55,7 +61,6 @@ export default function InputNavbar() {
 
         <div className="px-6 cursor-pointer border-r" data-name="checkout">
           <p className="text-xs font-medium text-textNavbar-primary">
-            {" "}
             Check out
           </p>
           <p className="text-sm text-textNavbar-secondary"> Add dates</p>

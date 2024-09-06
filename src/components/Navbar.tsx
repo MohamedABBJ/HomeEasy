@@ -80,7 +80,7 @@ export default function Navbar() {
             <Globe size={16} strokeWidth={2} color="#222222" />
           </button>
           <DropdownMenu>
-            <DropdownMenuTrigger>
+            <DropdownMenuTrigger asChild>
               <div>
                 <Button
                   variant="outline"
