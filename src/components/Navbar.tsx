@@ -14,6 +14,10 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
+import DefaultModal from "./DefaultModal"
+import LoginRegister from "./LoginRegister"
+import World from "./World"
+
 const labelHamburger: string[] = [
   "Sign up",
   "Log in",
@@ -23,9 +27,11 @@ const labelHamburger: string[] = [
 ]
 
 type Tab = "stays" | "experience"
+type Modals = "loginregister" | "world"
 
 export default function Navbar() {
   const [activeTab, setActiveTab] = useState<Tab>("stays")
+  const [showModal, setShowModal] = useState<Modals>("")
 
   function handleSetActiveTab(tab: Tab): void {
     setActiveTab(tab)
@@ -76,7 +82,11 @@ export default function Navbar() {
               Airbnb your home
             </Button>
           </Link>
-          <button className="p-3 hover:bg-accent rounded-full mr-2 ">
+          <button
+            className="p-3 hover:bg-accent rounded-full mr-2"
+            onClick={() => setShowModal("world")}
+            data-modalname="world"
+          >
             <Globe size={16} strokeWidth={2} color="#222222" />
           </button>
           <DropdownMenu>
@@ -101,26 +111,29 @@ export default function Navbar() {
               className="px-0 min-w-60 rounded-xl"
             >
               {labelHamburger.map((el, idx) =>
-                idx === 1 ? (
+                idx === 0 ? (
+                  <DropdownMenuItem
+                    className="font-medium pl-4 cursor-pointer py-3"
+                    key={idx}
+                    onClick={() => setShowModal("loginregister")}
+                    data-modalname="loginregister"
+                  >
+                    {el}
+                  </DropdownMenuItem>
+                ) : idx === 1 ? (
                   <div key={idx}>
-                    <Link href="/login">
-                      <DropdownMenuItem
-                        className={`${
-                          el === "Sign up" ? "font-medium" : ""
-                        } pl-4 cursor-pointer py-3`}
-                      >
-                        {el}
-                      </DropdownMenuItem>
-                    </Link>
+                    <DropdownMenuItem
+                      className="pl-4 cursor-pointer py-3"
+                      onClick={() => setShowModal("loginregister")}
+                      data-modalname="loginregister"
+                    >
+                      {el}
+                    </DropdownMenuItem>
                     <DropdownMenuSeparator />
                   </div>
                 ) : (
                   <Link href={el.replace(/\s/g, "").toLowerCase()} key={idx}>
-                    <DropdownMenuItem
-                      className={`${
-                        el === "Sign up" ? "font-medium" : ""
-                      } pl-4 cursor-pointer py-3`}
-                    >
+                    <DropdownMenuItem className="pl-4 cursor-pointer py-3">
                       {el}
                     </DropdownMenuItem>
                   </Link>
@@ -130,6 +143,17 @@ export default function Navbar() {
           </DropdownMenu>
         </ul>
       </nav>
+
+      {showModal === "loginregister" && (
+        <DefaultModal setShowModal={setShowModal} showModal={showModal}>
+          <LoginRegister />
+        </DefaultModal>
+      )}
+      {showModal === "world" && (
+        <DefaultModal setShowModal={setShowModal} showModal={showModal}>
+          <World />
+        </DefaultModal>
+      )}
     </header>
   )
 }

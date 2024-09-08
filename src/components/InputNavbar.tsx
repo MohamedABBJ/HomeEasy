@@ -1,5 +1,7 @@
 "use client"
-import { useState, useRef } from "react"
+
+import { useState, useRef, useEffect } from "react"
+import { useActiveModals } from ".././hooks/useActiveModals"
 
 import {
   DropdownMenu,
@@ -14,29 +16,20 @@ import InputModals from "./InputModals"
 import InputCalendar from "./InputCalendar"
 import InputGuest from "./InputGuest"
 
+type nameModal = "" | "destination" | "checkin" | "checkout" | "who"
+
 export default function InputNavbar() {
-  const [activeModals, setActiveModals] = useState<string>("")
-  const containerModalRef = useRef(null)
-
-  function handleActiveModal(e): void {
-    const name = e.target.dataset.name || e.target.parentElement.dataset.name
-
-    if (!name && containerModalRef.current.contains(e.target)) {
-      setActiveModals((sm) => (sm = sm))
-    } else {
-      setActiveModals((sm) => (sm = name))
-    }
-  }
+  const [activeModals, setActiveModals] = useState<nameModal>("")
+  const containerModalRef = useActiveModals(setActiveModals)
 
   return (
     <div className="w-full flex items-center justify-center border-b pb-4">
       <div
         className="rounded-full shadow-3xl flex py-3.5"
-        onClick={(e) => handleActiveModal(e)}
         ref={containerModalRef}
       >
         <div
-          className="px-8 border-r cursor-pointer relative min-w-[284px]"
+          className="px-8 border-r cursor-pointer relative flex-2"
           data-name="destination"
         >
           <p className="text-xs font-medium text-textNavbar-primary "> Where</p>
@@ -49,7 +42,7 @@ export default function InputNavbar() {
         </div>
 
         <div
-          className="px-6 cursor-pointer border-r relative"
+          className="px-6 cursor-pointer border-r relative flex-1"
           data-name="checkin"
         >
           <p className="text-xs font-medium text-textNavbar-primary">
@@ -59,14 +52,22 @@ export default function InputNavbar() {
           {activeModals === "checkin" ? <InputCalendar /> : ""}
         </div>
 
-        <div className="px-6 cursor-pointer border-r" data-name="checkout">
+        <div
+          className="px-6 cursor-pointer border-r relative flex-1"
+          data-name="checkout"
+        >
           <p className="text-xs font-medium text-textNavbar-primary">
             Check out
           </p>
           <p className="text-sm text-textNavbar-secondary"> Add dates</p>
+          {activeModals === "checkout" ? (
+            <p className="absolute top-0 left-0"> Placeholder </p>
+          ) : (
+            ""
+          )}
         </div>
 
-        <div className="px-8 cursor-pointer relative" data-name="who">
+        <div className="px-8 cursor-pointer relative flex-2" data-name="who">
           <p className="text-xs font-medium text-textNavbar-primary"> Who</p>
           <p className="text-sm text-textNavbar-secondary"> Add guests</p>
           {activeModals === "who" ? <InputGuest /> : ""}
