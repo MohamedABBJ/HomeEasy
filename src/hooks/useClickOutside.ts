@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react"
 ////Typescript for event (e)
 
 export function useClickOutside(actionFunction) {
-  const modalRef = useRef()
+  const modalRef = useRef(null)
   useEffect(
     function () {
       function handleClickOutside(e) {

@@ -27,7 +27,7 @@ const labelHamburger: string[] = [
 ]
 
 type Tab = "stays" | "experience"
-type Modals = "loginregister" | "world"
+type Modals = "" | "loginregister" | "world"
 
 export default function Navbar() {
   const [activeTab, setActiveTab] = useState<Tab>("stays")

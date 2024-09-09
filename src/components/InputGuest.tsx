@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Plus, Minus } from "lucide-react"
+import { useState } from "react";
+import { Plus, Minus } from "lucide-react";
 
 type labelType = {
-  id: number
-  title: string
-  descr: string
-  value: number
-}
+  id: number;
+  title: string;
+  descr: string;
+  value: number;
+};
 
 const labelGuest: labelType[] = [
   {
@@ -35,28 +35,28 @@ const labelGuest: labelType[] = [
     descr: "Bringing a service animal?",
     value: 0,
   },
-]
+];
 
 export default function InputGuest() {
-  const [counter, setCounter] = useState<labelType[]>(labelGuest)
+  const [counter, setCounter] = useState<labelType[]>(labelGuest);
 
   function handleCounter(idx: number, type: "plus" | "minus") {
     setCounter((c) =>
       c.map((el, labelIdx) => {
         if (labelIdx === idx) {
           if (type === "minus" && el.value > 0) {
-            return { ...el, value: el.value - 1 }
+            return { ...el, value: el.value - 1 };
           } else if (type === "plus") {
-            return { ...el, value: el.value + 1 }
+            return { ...el, value: el.value + 1 };
           }
         }
-        return el
-      })
-    )
+        return el;
+      }),
+    );
   }
 
   return (
-    <div className="absolute shadow-md bg-popover rounded-3xl top-16 right-0 border py-4 px-8 min-w-[406px] cursor-auto">
+    <div className="absolute shadow-md bg-popover rounded-3xl top-[76px] right-0 border py-4 px-8 min-w-[406px] cursor-auto">
       {/*--------*/}
 
       {counter.map((el, idx) => (
@@ -99,5 +99,5 @@ export default function InputGuest() {
       ))}
       {/*--------*/}
     </div>
-  )
+  );
 }

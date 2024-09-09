@@ -32,6 +32,7 @@ const config: Config = {
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        bgaccent: "hsl(var(--bgaccent))",
         textNavbar: {
           primary: "hsl(0, 0%, 13%)",
           secondary: "hsl(0, 0%, 42%)",
