@@ -1,10 +1,9 @@
-"use client"
+"use client";
+import { useState } from "react";
+import Link from "next/link";
 
-import { useState } from "react"
-import Link from "next/link"
-
-import { Globe, Menu, CircleUserRound } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Globe, Menu, CircleUserRound } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -12,30 +11,30 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu";
 
-import DefaultModal from "./DefaultModal"
-import LoginRegister from "./LoginRegister"
-import World from "./World"
+import DefaultModal from "./DefaultModal";
+import LoginRegister from "./LoginRegister";
+import World from "./World";
 
+import { Tab } from "./Header";
+
+interface TabProps {
+  activeTab: Tab;
+  handleSetActiveTab: (tab: Tab) => void;
+}
 const labelHamburger: string[] = [
   "Sign up",
   "Log in",
   "Gift cards",
   "Airbnb your home",
   "Help center",
-]
+];
 
-type Tab = "stays" | "experience"
-type Modals = "" | "loginregister" | "world"
+type Modals = "" | "loginregister" | "world";
 
-export default function Navbar() {
-  const [activeTab, setActiveTab] = useState<Tab>("stays")
-  const [showModal, setShowModal] = useState<Modals>("")
-
-  function handleSetActiveTab(tab: Tab): void {
-    setActiveTab(tab)
-  }
+export default function Navbar({ handleSetActiveTab, activeTab }: TabProps) {
+  const [showModal, setShowModal] = useState<Modals>("");
 
   return (
     <header className="navbarmd:flex items-center justify-between w-full navbar2xl:px-20 navbarmd:px-10 h-[80px] hidden">
@@ -137,7 +136,7 @@ export default function Navbar() {
                       {el}
                     </DropdownMenuItem>
                   </Link>
-                )
+                ),
               )}
             </DropdownMenuContent>
           </DropdownMenu>
@@ -155,5 +154,5 @@ export default function Navbar() {
         </DefaultModal>
       )}
     </header>
-  )
+  );
 }
