@@ -1,106 +1,86 @@
-"use client"
+import Link from "next/link"
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { ChevronLeft, ChevronRight } from "lucide-react"
-import { useRef, useState } from "react"
-
-const TestFooter = () => {
-  const tabsListRef = useRef<HTMLDivElement>(null)
-  const [showLeftButton, setShowLeftButton] = useState(false)
-  const [showRightButton, setShowRightButton] = useState(true)
-
-  const updateButtonVisibility = () => {
-    if (tabsListRef.current) {
-      const scrollLeft = tabsListRef.current.scrollLeft
-      const scrollWidth = tabsListRef.current.scrollWidth
-      const clientWidth = tabsListRef.current.clientWidth
-
-      setShowLeftButton(scrollLeft > 0)
-      setShowRightButton(scrollLeft + clientWidth < scrollWidth)
-    }
-  }
-
-  const scrollLeft = () => {
-    if (tabsListRef.current) {
-      tabsListRef.current.scrollBy({ left: -50, behavior: "smooth" })
-      updateButtonVisibility()
-    }
-  }
-
-  const scrollRight = () => {
-    if (tabsListRef.current) {
-      tabsListRef.current.scrollBy({ left: 50, behavior: "smooth" })
-      updateButtonVisibility()
-    }
-  }
-
+const Footer = () => {
   return (
-    <section className="bg-footer px-10 py-12">
-      <h2 className="font-medium text-text text-[1.375rem] leading-[1.182em] tracking-[-0.01em] mb-2">Inspiration for future getaways</h2>
-
-      <Tabs defaultValue='popular' className="">
-        <div className="tabslist-container relative">
-          <div className="items-center justify-between w-full px-3 mx-[-12px] overflow-hidden" >
-            <TabsList ref={tabsListRef} className="h-full p-0 bg-footer whitespace-nowrap overflow-hidden">
-              <TabsTrigger className='p-[10px] m-[6px] ml-[-10px]' value="popular">Popular</TabsTrigger>
-              <TabsTrigger value="artsAndCulture">Arts & Culture</TabsTrigger>
-              <TabsTrigger value="outdoors">Outdoors</TabsTrigger>
-              <TabsTrigger value="mountains">Mountains</TabsTrigger>
-              <TabsTrigger value="beach">Beach</TabsTrigger>
-              <TabsTrigger value="uniqueStays">Unique stays</TabsTrigger>
-              <TabsTrigger value="categories">Categories</TabsTrigger>
-              <TabsTrigger value="thingsToDo">Things to do</TabsTrigger>
-              <TabsTrigger value="travelTipsAndInspiration">Travel tips & inspiration</TabsTrigger>
-              <TabsTrigger value="airbnb-FriendlyApartments">Airbnb-friendly apartments</TabsTrigger>
-            </TabsList>
-          </div>
-          <div className="divider w-full h-[1px] bg-divider"></div>
-          {showLeftButton && (
-            <button onClick={scrollLeft} className="absolute left-[-12px] top-0 flex items-center justify-start h-full w-10 z-10 bg-gradient-to-r from-footer from-50%">
-              <ChevronLeft />
-            </button>
-          )}
-          {showRightButton && (
-            <button onClick={scrollRight} className="absolute right-[-12px] top-0 flex items-center justify-end h-full w-10 z-10 bg-gradient-to-l from-footer from-50%">
-              <ChevronRight />
-            </button>
-          )}
-        </div>
-        <div>
-          <TabsContent value="popular">
-            Popular Content
-          </TabsContent>
-          <TabsContent value="artsAndCulture">
-            Arts & Culture
-          </TabsContent>
-          <TabsContent value="outdoors">
-            Outdoors
-          </TabsContent>
-          <TabsContent value="mountains">
-            Mountains
-          </TabsContent>
-          <TabsContent value="beach">
-            Beach
-          </TabsContent>
-          <TabsContent value="uniqueStays">
-            Unique stays
-          </TabsContent>
-          <TabsContent value="categories">
-            Categories
-          </TabsContent>
-          <TabsContent value="thingsToDo">
-            Things to do
-          </TabsContent>
-          <TabsContent value="travelTipsAndInspiration">
-            Travel tips & inspiration
-          </TabsContent>
-          <TabsContent value="airbnb-FriendlyApartments">
-            Airbnb-friendly apartments
-          </TabsContent>
-        </div>
-      </Tabs>
-    </section>
+    <footer className="bg-footer text-sm text-text-foreground">
+      <div className="footer-grid-container grid px-10 border-t-divider border-t-[1px] lg:grid-cols-3 sm:grid-cols-1">
+        <section className="support lg:py-12 py-6">
+          <h3 className="mb-3 font-medium">Support</h3>
+          <ul className="grid gap-3">
+            <li className="hover:underline">
+              <Link href='/help'>Help Center</Link>
+            </li>
+            <li className="hover:underline">
+              <Link href='/help/article/3218'>AirCover</Link>
+            </li>
+            <li className="hover:underline">
+              <Link href='/against-discrimination'>Anti-discrimination</Link>
+            </li>
+            <li className="hover:underline">
+              <Link href='/accessibility'>Disability support</Link>
+            </li>
+            <li className="hover:underline">
+              <Link href='/help/article/1320'>Cancellation options</Link>
+            </li>
+            <li className="hover:underline">
+              <Link href='/help/article/3290'>Report neighborhood concern</Link>
+            </li>
+          </ul>
+        </section>
+        <div className="bg-divider h-[1px] lg:hidden"></div>
+        <section className="hosting lg:py-12 py-6">
+          <h3 className="mb-3 font-medium">Hosting</h3>
+          <ul className="grid gap-3">
+            <li className="hover:underline">
+              <Link href='/host/homes'>Airbnb your home</Link>
+            </li>
+            <li className="hover:underline">
+              <Link href='/aircover-for-hosts'>AirCover for Hosts</Link>
+            </li>
+            <li className="hover:underline">
+              <Link href='/resources/hosting-homes'>Hosting resources</Link></li>
+            <li className="hover:underline">
+              <Link href='/community'>Community forum</Link>
+            </li>
+            <li className="hover:underline">
+              <Link href='/help/article/1376'>Hosting responsibly</Link>
+            </li>
+            <li className="hover:underline">
+              <Link href='/airbnb-friendly'>Airbnb-friendly apartments</Link>
+            </li>
+            <li className="hover:underline">
+              <Link href='/ambassadors/joinaclass'>Join a free hosting class</Link>
+            </li>
+          </ul>
+        </section>
+        <div className="bg-divider h-[1px] lg:hidden"></div>
+        <section className="airbnb lg:py-12 py-6">
+          <h3 className="mb-3 font-medium">Airbnb</h3>
+          <ul className="grid gap-3">
+            <li className="hover:underline">
+              <Link href='/press/news'>Newsroom</Link>
+            </li>
+            <li className="hover:underline">
+              <Link href='/release'>New features</Link>
+            </li>
+            <li className="hover:underline">
+              <Link href='/careers'>Careers</Link>
+            </li>
+            <li className="hover:underline">
+              <Link href='/investors'>Investors</Link>
+            </li>
+            <li className="hover:underline">
+              <Link href='/giftcards'>Gift cards</Link>
+            </li>
+            <li className="hover:underline">
+              <a href="https://www.airbnb.org/">Airbnb.org emergency stays</a>
+            </li>
+          </ul>
+        </section>
+      </div>
+      <div className="bg-divider h-[1px] lg:hidden"></div>
+    </footer>
   )
 }
 
-export default TestFooter
+export default Footer
