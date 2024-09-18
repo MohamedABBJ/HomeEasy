@@ -107,7 +107,7 @@ const Footer = () => {
           </div>
           <div className="flex text-text-foreground mb-6 md:mb-4 lg:m-0">
             <div>
-              <ul className="hidden items-center gap-4 sm:flex">
+              <ul className="hidden items-center gap-4 md:flex">
                 <li>
                   <a href='https://www.facebook.com/airbnb'>
                     <div className="bg-text-foreground">
