@@ -66,7 +66,7 @@ const GetawaysInspiration = () => {
             </button>
           )}
         </div>
-        <div>
+        <div className="pt-8">
           <TabsContent value="popular">
             Popular Content
           </TabsContent>

@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { Facebook, Instagram, Twitter } from "lucide-react"
 
 const Footer = () => {
   return (
@@ -28,6 +29,7 @@ const Footer = () => {
           </ul>
         </section>
         <div className="bg-divider h-[1px] lg:hidden"></div>
+
         <section className="hosting lg:py-12 py-6">
           <h3 className="mb-3 font-medium">Hosting</h3>
           <ul className="grid gap-3">
@@ -54,6 +56,7 @@ const Footer = () => {
           </ul>
         </section>
         <div className="bg-divider h-[1px] lg:hidden"></div>
+
         <section className="airbnb lg:py-12 py-6">
           <h3 className="mb-3 font-medium">Airbnb</h3>
           <ul className="grid gap-3">
@@ -78,7 +81,59 @@ const Footer = () => {
           </ul>
         </section>
       </div>
-      <div className="bg-divider h-[1px] lg:hidden"></div>
+      <section className="py-6 px-10 border border-t-divider border-top-[1px]">
+        <div className="flex flex-col-reverse md:max-lg:items-center lg:flex-row lg:justify-between ">
+          <div className="flex md:items-center flex-col lg:flex-row ">
+            <span className="sm:mb-[2px]">© 2024 Airbnb, Inc.</span>
+            <span className="hidden lg:inline-block px-2">·</span>
+
+            <ol className="flex">
+              <li>
+                <Link href='/help/article/2908'>Terms</Link>
+                <span className="inline-block px-2">·</span>
+              </li>
+              <li>
+                <Link href='/sitemaps/v2'>Sitemap</Link>
+                <span className="inline-block px-2">·</span>
+              </li>
+              <li>
+                <Link href='/help/article/2855'>Privacy</Link>
+                <span className="inline-block px-2">·</span>
+              </li>
+              <li>
+                <Link href='/help/sale-share-opt-out'>Your Privacy Choices</Link>
+              </li>
+            </ol>
+          </div>
+          <div className="flex text-text-foreground mb-6 md:mb-4 lg:m-0">
+            <div>
+              <ul className="hidden items-center gap-4 sm:flex">
+                <li>
+                  <a href='https://www.facebook.com/airbnb'>
+                    <div className="bg-text-foreground">
+                      <Facebook className="m-auto" size={18} strokeWidth={1} fill="white" />
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://x.com/airbnb">
+                    <div className="bg-text-foreground">
+                      <Twitter className="m-auto" size={18} strokeWidth={1} fill="white" />
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href='https://instagram.com/airbnb'>
+                    <div className="bg-text-foreground">
+                      <Instagram className="m-auto" size={18} strokeWidth={2} stroke='white' fill="#222222" />
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
     </footer>
   )
 }
