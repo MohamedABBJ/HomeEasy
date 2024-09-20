@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useActiveModals } from ".././hooks/useActiveModals";
 
 import Inputs from "./Inputs";
-import InputModals from "./InputModals";
+import InputDestinations from "./InputDestinations";
 import InputCalendar from "./InputCalendar";
 import InputGuest from "./InputGuest";
 import { Search } from "lucide-react";
@@ -19,6 +19,9 @@ type nameModal = "" | "destination" | "checkin" | "checkout" | "who" | "date";
 
 export default function InputNavbar({ activeTab }: Tabinput) {
     const [activeModals, setActiveModals] = useState<nameModal>("");
+    const [selected, setSelected] = useState({});
+    const [destination, setDestination] = useState<string>("");
+
     const containerModalRef = useActiveModals(setActiveModals);
 
     return (
@@ -32,9 +35,15 @@ export default function InputNavbar({ activeTab }: Tabinput) {
                     <input
                         type="text"
                         placeholder="Search destination"
-                        className="text-sm text-[hsl(0,0%,69%)] border-none outline-none focus:border-none focs:outline-none bg-transparent"
+                        className="text-textNavbar-primary font-medium text-sm placehoder:font-normal placeholder:text-[hsl(0,0%,69%)] border-none outline-none focus:border-none focs:outline-none bg-transparent"
+                        value={destination ? destination : ""}
+                        onChange={(e) => setDestination(e.target.value)}
                     />
-                    {activeModals === "destination" ? <InputModals /> : ""}
+                    {activeModals === "destination" ? (
+                        <InputDestinations setDestination={setDestination} />
+                    ) : (
+                        ""
+                    )}
                 </Inputs>
                 {activeTab === "stays" ? (
                     <>
@@ -42,17 +51,47 @@ export default function InputNavbar({ activeTab }: Tabinput) {
                             <p className="text-xs font-medium text-textNavbar-primary">
                                 Check in
                             </p>
-                            <p className="text-sm text-textNavbar-secondary"> Add dates</p>
-                            {activeModals === "checkin" ? <InputCalendar /> : ""}
+
+                            {selected.from ? (
+                                <p className="text-sm text-textNavbar-primary font-medium">
+                                    {selected.from.toLocaleString("en-US", {
+                                        month: "short",
+                                        day: "numeric",
+                                    })}
+                                </p>
+                            ) : (
+                                <p className="text-sm text-textNavbar-secondary">Add dates</p>
+                            )}
+
+                            {activeModals === "checkin" ? (
+                                <InputCalendar setSelected={setSelected} selected={selected} />
+                            ) : (
+                                ""
+                            )}
                         </Inputs>
 
                         <Inputs type="small" name="checkout" activeModals={activeModals}>
                             <p className="text-xs font-medium text-textNavbar-primary">
                                 Check out
                             </p>
-                            <p className="text-sm text-textNavbar-secondary"> Add dates</p>
+
+                            {selected.to ? (
+                                <p className="text-sm text-textNavbar-primary font-medium">
+                                    {selected.to.toLocaleString("en-US", {
+                                        month: "short",
+                                        day: "numeric",
+                                    })}
+                                </p>
+                            ) : (
+                                <p className="text-sm text-textNavbar-secondary">Add dates</p>
+                            )}
+
                             {activeModals === "checkout" ? (
-                                <p className="absolute top-0 left-0"> Placeholder </p>
+                                <InputCalendar
+                                    setSelected={setSelected}
+                                    selected={selected}
+                                    type={activeModals}
+                                />
                             ) : (
                                 ""
                             )}
@@ -63,7 +102,11 @@ export default function InputNavbar({ activeTab }: Tabinput) {
                         <p className="text-xs font-medium text-textNavbar-primary"> Date</p>
                         <p className="text-sm text-textNavbar-secondary"> Add dates</p>
                         {activeModals === "date" ? (
-                            <InputCalendar type={activeModals} />
+                            <InputCalendar
+                                type={activeModals}
+                                selected={selected}
+                                setSelected={setSelected}
+                            />
                         ) : (
                             ""
                         )}

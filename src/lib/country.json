@@ -1,0 +1,374 @@
+[
+    {
+        "language": "English",
+        "country": "United States"
+    },
+    {
+        "language": "Az\u0259rbaycan dili",
+        "country": "Az\u0259rbaycan"
+    },
+    {
+        "language": "Bahasa Indonesia",
+        "country": "Indonesia"
+    },
+    {
+        "language": "Bosanski",
+        "country": "Bosna i Hercegovina"
+    },
+    {
+        "language": "Catal\u00e0",
+        "country": "Espanya"
+    },
+    {
+        "language": "\u010ce\u0161tina",
+        "country": "\u010cesk\u00e1 republika"
+    },
+    {
+        "language": "Crnogorski",
+        "country": "Crna Gora"
+    },
+    {
+        "language": "Dansk",
+        "country": "Danmark"
+    },
+    {
+        "language": "Deutsch",
+        "country": "Deutschland"
+    },
+    {
+        "language": "Deutsch",
+        "country": "\u00d6sterreich"
+    },
+    {
+        "language": "Deutsch",
+        "country": "Schweiz"
+    },
+    {
+        "language": "Deutsch",
+        "country": "Luxemburg"
+    },
+    {
+        "language": "Eesti",
+        "country": "Eesti"
+    },
+    {
+        "language": "English",
+        "country": "Australia"
+    },
+    {
+        "language": "English",
+        "country": "Canada"
+    },
+    {
+        "language": "English",
+        "country": "Guyana"
+    },
+    {
+        "language": "English",
+        "country": "India"
+    },
+    {
+        "language": "English",
+        "country": "Ireland"
+    },
+    {
+        "language": "English",
+        "country": "New Zealand"
+    },
+    {
+        "language": "English",
+        "country": "Singapore"
+    },
+    {
+        "language": "English",
+        "country": "United Arab Emirates"
+    },
+    {
+        "language": "English",
+        "country": "United Kingdom"
+    },
+    {
+        "language": "Espa\u00f1ol",
+        "country": "Argentina"
+    },
+    {
+        "language": "Espa\u00f1ol",
+        "country": "Belice"
+    },
+    {
+        "language": "Espa\u00f1ol",
+        "country": "Bolivia"
+    },
+    {
+        "language": "Espa\u00f1ol",
+        "country": "Chile"
+    },
+    {
+        "language": "Espa\u00f1ol",
+        "country": "Colombia"
+    },
+    {
+        "language": "Espa\u00f1ol",
+        "country": "Costa Rica"
+    },
+    {
+        "language": "Espa\u00f1ol",
+        "country": "Ecuador"
+    },
+    {
+        "language": "Espa\u00f1ol",
+        "country": "El Salvador"
+    },
+    {
+        "language": "Espa\u00f1ol",
+        "country": "Espa\u00f1a"
+    },
+    {
+        "language": "Espa\u00f1ol",
+        "country": "Estados Unidos"
+    },
+    {
+        "language": "Espa\u00f1ol",
+        "country": "Guatemala"
+    },
+    {
+        "language": "Espa\u00f1ol",
+        "country": "Honduras"
+    },
+    {
+        "language": "Espa\u00f1ol",
+        "country": "Latinoam\u00e9rica"
+    },
+    {
+        "language": "Espa\u00f1ol",
+        "country": "M\u00e9xico"
+    },
+    {
+        "language": "Espa\u00f1ol",
+        "country": "Nicaragua"
+    },
+    {
+        "language": "Espa\u00f1ol",
+        "country": "Panam\u00e1"
+    },
+    {
+        "language": "Espa\u00f1ol",
+        "country": "Paraguay"
+    },
+    {
+        "language": "Espa\u00f1ol",
+        "country": "Per\u00fa"
+    },
+    {
+        "language": "Espa\u00f1ol",
+        "country": "Venezuela"
+    },
+    {
+        "language": "Fran\u00e7ais",
+        "country": "Belgique"
+    },
+    {
+        "language": "Fran\u00e7ais",
+        "country": "Canada"
+    },
+    {
+        "language": "Fran\u00e7ais",
+        "country": "France"
+    },
+    {
+        "language": "Fran\u00e7ais",
+        "country": "Suisse"
+    },
+    {
+        "language": "Fran\u00e7ais",
+        "country": "Luxembourg"
+    },
+    {
+        "language": "Gaeilge",
+        "country": "\u00c9ire"
+    },
+    {
+        "language": "Hrvatski",
+        "country": "Hrvatska"
+    },
+    {
+        "language": "isiXhosa",
+        "country": "eMzantsi Afrika"
+    },
+    {
+        "language": "isiZulu",
+        "country": "iNingizimu Afrika"
+    },
+    {
+        "language": "\u00cdslenska",
+        "country": "\u00cdsland"
+    },
+    {
+        "language": "Italiano",
+        "country": "Italia"
+    },
+    {
+        "language": "Italiano",
+        "country": "Svizzera"
+    },
+    {
+        "language": "Kiswahili",
+        "country": "\u0100frika"
+    },
+    {
+        "language": "Latvie\u0161u",
+        "country": "Latvija"
+    },
+    {
+        "language": "Lietuvi\u0173",
+        "country": "Lietuva"
+    },
+    {
+        "language": "Magyar",
+        "country": "Magyarorsz\u00e1g"
+    },
+    {
+        "language": "Malti",
+        "country": "Malta"
+    },
+    {
+        "language": "Melayu",
+        "country": "Malaysia"
+    },
+    {
+        "language": "Vlaams",
+        "country": "Belgi\u00eb"
+    },
+    {
+        "language": "Nederlands",
+        "country": "Nederland"
+    },
+    {
+        "language": "Norsk",
+        "country": "Norge"
+    },
+    {
+        "language": "Polski",
+        "country": "Polska"
+    },
+    {
+        "language": "Portugu\u00eas",
+        "country": "Brasil"
+    },
+    {
+        "language": "Portugu\u00eas",
+        "country": "Portugal"
+    },
+    {
+        "language": "Rom\u00e2n\u0103",
+        "country": "Rom\u00e2nia"
+    },
+    {
+        "language": "Shqip",
+        "country": "Shqip\u00ebri"
+    },
+    {
+        "language": "Sloven\u010dina",
+        "country": "Slovensko"
+    },
+    {
+        "language": "Sloven\u0161\u010dina",
+        "country": "Slovenija"
+    },
+    {
+        "language": "Srpski",
+        "country": "Srbija"
+    },
+    {
+        "language": "Suomi",
+        "country": "Suomi"
+    },
+    {
+        "language": "Svenska",
+        "country": "Sverige"
+    },
+    {
+        "language": "Tagalog",
+        "country": "Pilipinas"
+    },
+    {
+        "language": "Ti\u1ebfng Vi\u1ec7t",
+        "country": "Vi\u1ec7t Nam"
+    },
+    {
+        "language": "T\u00fcrk\u00e7e",
+        "country": "T\u00fcrkiye"
+    },
+    {
+        "language": "\u0395\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03ac",
+        "country": "\u0395\u03bb\u03bb\u03ac\u03b4\u03b1"
+    },
+    {
+        "language": "\u0411\u044a\u043b\u0433\u0430\u0440\u0441\u043a\u0438",
+        "country": "\u0411\u044a\u043b\u0433\u0430\u0440\u0438\u044f"
+    },
+    {
+        "language": "\u041c\u0430\u043a\u0435\u0434\u043e\u043d\u0441\u043a\u0438",
+        "country": "\u0421\u0435\u0432\u0435\u0440\u043d\u0430 \u041c\u0430\u043a\u0435\u0434\u043e\u043d\u0438\u0458\u0430"
+    },
+    {
+        "language": "\u0420\u0443\u0441\u0441\u043a\u0438\u0439",
+        "country": "\u0420\u043e\u0441\u0441\u0438\u044f"
+    },
+    {
+        "language": "\u0423\u043a\u0440\u0430\u0457\u043d\u0441\u044c\u043a\u0430",
+        "country": "\u0423\u043a\u0440\u0430\u0457\u043d\u0430"
+    },
+    {
+        "language": "\u10e5\u10d0\u10e0\u10d7\u10e3\u10da\u10d8",
+        "country": "\u10e1\u10d0\u10e5\u10d0\u10e0\u10d7\u10d5\u10d4\u10da\u10dd"
+    },
+    {
+        "language": "\u0540\u0561\u0575\u0565\u0580\u0565\u0576",
+        "country": "\u0540\u0561\u0575\u0561\u057d\u057f\u0561\u0576"
+    },
+    {
+        "language": "\u05e2\u05d1\u05e8\u05d9\u05ea",
+        "country": "\u05d9\u05e9\u05e8\u05d0\u05dc"
+    },
+    {
+        "language": "\u0627\u0644\u0639\u0631\u0628\u064a\u0629",
+        "country": "\u0627\u0644\u0639\u0627\u0644\u0645"
+    },
+    {
+        "language": "\u0939\u093f\u0928\u094d\u0926\u0940",
+        "country": "\u092d\u093e\u0930\u0924"
+    },
+    {
+        "language": "\u0e44\u0e17\u0e22",
+        "country": "\u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22"
+    },
+    {
+        "language": "\ud55c\uad6d\uc5b4",
+        "country": "\ub300\ud55c\ubbfc\uad6d"
+    },
+    {
+        "language": "\u65e5\u672c\u8a9e",
+        "country": "\u65e5\u672c"
+    },
+    {
+        "language": "\u7b80\u4f53\u4e2d\u6587",
+        "country": "\u7f8e\u56fd"
+    },
+    {
+        "language": "\u7e41\u9ad4\u4e2d\u6587",
+        "country": "\u7f8e\u570b"
+    },
+    {
+        "language": "\u7b80\u4f53\u4e2d\u6587",
+        "country": "\u4e2d\u56fd"
+    },
+    {
+        "language": "\u7e41\u9ad4\u4e2d\u6587",
+        "country": "\u9999\u6e2f"
+    },
+    {
+        "language": "\u7e41\u9ad4\u4e2d\u6587",
+        "country": "\u53f0\u7063"
+    }
+]
