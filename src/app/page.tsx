@@ -1,6 +1,11 @@
-import { Button } from "@/components/ui/button";
-import Image from "next/image";
+import Footer from "@/components/Footer";
+import GetawaysInspiration from "@/components/GetawaysInspiration";
 
 export default function Home() {
-  return <Button variant="outline">Button</Button>;
-}
+  return (
+    <>
+      <GetawaysInspiration />
+      <Footer />
+    </>
+  )
+} 
