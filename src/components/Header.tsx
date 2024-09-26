@@ -6,17 +6,17 @@ import Navbar from "./Navbar";
 import InputNavbar from "./InputNavbar";
 
 type Tab = "stays" | "experience";
-export default function Header() {
-  const [activeTab, setActiveTab] = useState<Tab>("stays");
+export default function Header({ countries }) {
+    const [activeTab, setActiveTab] = useState<Tab>("stays");
 
-  function handleSetActiveTab(tab: Tab): void {
-    setActiveTab(tab);
-  }
+    function handleSetActiveTab(tab: Tab): void {
+        setActiveTab(tab);
+    }
 
-  return (
-    <>
-      <Navbar activeTab={activeTab} handleSetActiveTab={handleSetActiveTab} />
-      <InputNavbar activeTab={activeTab} />
-    </>
-  );
+    return (
+        <>
+            <Navbar activeTab={activeTab} handleSetActiveTab={handleSetActiveTab} />
+            <InputNavbar activeTab={activeTab} countries={countries} />
+        </>
+    );
 }

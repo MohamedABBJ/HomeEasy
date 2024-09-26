@@ -1,8 +1,7 @@
 "use client";
-import { useState } from "react";
 
 import { DayPicker } from "react-day-picker";
-
+import { isPast } from "date-fns";
 export default function InputCalendar({ type, setSelected, selected }) {
     return (
         <div
@@ -14,6 +13,7 @@ export default function InputCalendar({ type, setSelected, selected }) {
                 numberOfMonths={2}
                 selected={selected}
                 onSelect={setSelected}
+                disabled={(currentDate) => isPast(currentDate)}
             />
         </div>
     );

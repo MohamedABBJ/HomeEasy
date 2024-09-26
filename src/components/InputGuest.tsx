@@ -3,49 +3,25 @@
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
 
-type labelType = {
-  id: number;
-  title: string;
-  descr: string;
-  value: number;
-};
-
-const labelGuest: labelType[] = [
-  {
-    id: 0,
-    title: "Adults",
-    descr: "Age 13 or above",
-    value: 0,
-  },
-  {
-    id: 1,
-    title: "Children",
-    descr: "Ages 2 - 12",
-    value: 0,
-  },
-  {
-    id: 2,
-    title: "Infants",
-    descr: "Under 2",
-    value: 0,
-  },
-  {
-    id: 3,
-    title: "Pets",
-    descr: "Bringing a service animal?",
-    value: 0,
-  },
-];
-
-export default function InputGuest() {
-  const [counter, setCounter] = useState<labelType[]>(labelGuest);
-
+export default function InputGuest({ setCounter, counter }) {
   function handleCounter(idx: number, type: "plus" | "minus") {
     setCounter((c) =>
       c.map((el, labelIdx) => {
+        const adultIdx = c.findIndex((label) => label.title === "Adults");
+        const checkValues = c.filter(
+          (label) => label.title !== "Adults" && label.value > 0,
+        );
         if (labelIdx === idx) {
           if (type === "minus" && el.value > 0) {
+            if (el.title === "Adults" && checkValues.length && el.value === 1) {
+              return el;
+            }
             return { ...el, value: el.value - 1 };
+          } else if (type === "plus" && el.title !== "Adults") {
+            if (c[adultIdx].value === 0) {
+              c[adultIdx].value += 1;
+            }
+            return { ...el, value: el.value + 1 };
           } else if (type === "plus") {
             return { ...el, value: el.value + 1 };
           }
@@ -62,7 +38,7 @@ export default function InputGuest() {
       {counter.map((el, idx) => (
         <div
           className={`flex justify-between py-6 ${
-            idx !== labelGuest.length - 1 ? "border-b" : ""
+            idx !== counter.length - 1 ? "border-b" : ""
           }`}
           key={el.id}
         >
@@ -70,7 +46,7 @@ export default function InputGuest() {
             <h4 className="font-medium text-textNavbar-primary ">{el.title}</h4>
             <p
               className={`text-sm text-textNavbar-secondary py-1 ${
-                idx === labelGuest.length - 1 ? "underline font-medium" : ""
+                idx === counter.length - 1 ? "underline font-medium" : ""
               }`}
             >
               {el.descr}
@@ -78,6 +54,7 @@ export default function InputGuest() {
           </div>
           <div className="flex justify-center items-center gap-4">
             <button
+              type="button"
               className={`p-2 rounded-full border  text-textNavbar-secondary ${
                 !el.value
                   ? "cursor-not-allowed border-gray-200 text-gray-200"
@@ -89,6 +66,7 @@ export default function InputGuest() {
             </button>
             <span> {el.value} </span>
             <button
+              type="button"
               className="p-2 rounded-full border border-[#6b6b6b]"
               onClick={() => handleCounter(idx, "plus")}
             >
